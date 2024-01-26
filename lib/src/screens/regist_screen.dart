@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'login_screen.dart'; // Sesuaikan dengan path login_screen.dart yang benar
+import 'login_screen.dart';
 
 class RegistrationPage extends StatefulWidget {
   @override
@@ -82,7 +82,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(
-                    double.infinity, 40), // Sesuaikan lebar yang diinginkan
+                    double.infinity, 40),
               ),
               child: Text('Submit'),
             ),
@@ -96,7 +96,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: Size(
-                    double.infinity, 40), // Sesuaikan lebar yang diinginkan
+                    double.infinity, 40),
               ),
               child: Text('Login'),
             ),
