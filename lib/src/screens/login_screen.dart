@@ -8,7 +8,6 @@ class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
 }
-
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -62,53 +61,52 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inventory Barang'),
+        title: Text('Login',
+        style: TextStyle(color: Colors.blue),),
         centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Login',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-            ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Password'),
-              obscureText: true,
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                _signIn();
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(
-                    double.infinity, 40),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset('assets/images/login_ui.png'),
+          
+              TextField(
+                controller: _emailController,
+                decoration: InputDecoration(labelText: 'Email'),
               ),
-              child: Text('Submit'),
-            ),
-            Text(
-              'Or',
-              style: TextStyle(fontSize: 10),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                _regist();
-              },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(
-                    double.infinity, 40),
+              TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(labelText: 'Password'),
+                obscureText: true,
               ),
-              child: Text('Regist'),
-            ),
-          ],
+              SizedBox(height: 16.0),
+              ElevatedButton(
+                onPressed: () {
+                  _signIn();
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 40),
+                ),
+                child: Text('Submit'),
+              ),
+              Text(
+                'Or',
+                style: TextStyle(fontSize: 10),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  _regist();
+                },
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(double.infinity, 40),
+                ),
+                child: Text('Regist'),
+              ),
+            ],
+          ),
         ),
       ),
     );
